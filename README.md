@@ -39,19 +39,4 @@ A React + Vite application that implements a task manager with **10 intentional 
 - Project health score
 - Session timer
 
-## Bugs
 
-All 10 bugs live in `src/TaskManager.jsx`. They cover common React anti-patterns and mistakes:
-
-| # | Bug | Line Area |
-|---|-----|-----------|
-| 1 | Memory leak — `setInterval` without cleanup in `useEffect` | `useEffect` timer |
-| 2 | Stale closure — `completedCount` captured at effect creation time | `useEffect` tasks watcher |
-| 3 | Mutating sort — `.sort()` mutates the filtered array in place | `sortedTasks` |
-| 4 | Direct state mutation — `tasks.push()` instead of creating new array | `addTask` |
-| 5 | Direct object mutation — modifying task object in place before `setTasks` | `toggleStatus` |
-| 6 | Missing `e.preventDefault()` — form submits and reloads the page | `handleAddSubmit` |
-| 7 | Partial state overwrite — `setNewTask({ [field]: value })` without spread | `handleNewTaskChange` |
-| 8 | Index as key — using array index for a filterable/sortable list | `sortedTasks.map` |
-| 9 | Stale closure in notification — references stale `completedCount` | `useEffect` tasks watcher |
-| 10 | Wrong divisor in calculation — divides by `tasks.length` instead of `totalWeight` | `projectHealth` |
